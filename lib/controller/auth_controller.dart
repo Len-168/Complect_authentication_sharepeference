@@ -30,9 +30,12 @@ class AuthController extends GetxController {
     if (user != null) {
       Get.to(() => ShowUser());
       await _userRepository.putStatusLogin();
-      final status = await _userRepository.getStatusLogin();
-      loginStatus.value = status!;
     }
+  }
+
+  void isLogin() async {
+    final status = await _userRepository.getStatusLogin();
+    loginStatus.value = status!;
     print(loginStatus);
   }
 }
