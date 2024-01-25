@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:demo_logic/model/user_model.dart';
+import 'package:demo_logic/Auth/model/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserRepository {
@@ -42,11 +42,11 @@ class UserRepository {
 
   Future<bool> putStatusLogin() async {
     final pref = await _getSharePreference();
-    return pref.setString(_isLogin, 'logged');
+    return pref.setBool(_isLogin, true);
   }
 
-  Future<String?> getStatusLogin() async {
+  Future<bool> getStatusLogin() async {
     final pref = await _getSharePreference();
-    return pref.getString(_isLogin);
+    return pref.getBool(_isLogin) ?? false;
   }
 }

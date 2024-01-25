@@ -1,6 +1,7 @@
-import 'package:demo_logic/view/authScreen/login_Screen.dart';
-import 'package:demo_logic/view/splash_screen.dart';
-import 'package:demo_logic/view/tabScreen/listUser_screen.dart';
+import 'package:demo_logic/Auth/view/authScreen/login_Screen.dart';
+import 'package:demo_logic/Auth/view/splash_screen.dart';
+import 'package:demo_logic/ListData/view/home_screen.dart';
+import 'package:demo_logic/binding/getBudinding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,13 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Registration and Login Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      debugShowCheckedModeBanner: false,
+      initialBinding: HomeBinding(),
       initialRoute: '/splas',
       getPages: [
         GetPage(name: '/splas', page: () => SplashScreen()),
         GetPage(name: '/loing', page: () => RegistrationLoginScreen()),
-        GetPage(name: '/showuser', page: () => ShowUser()),
+        GetPage(name: '/homeScreen', page: () => HomeScreen()),
       ],
     );
   }
