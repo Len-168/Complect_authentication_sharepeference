@@ -1,5 +1,5 @@
-import 'package:demo_logic/controller/auth_controller.dart';
-import 'package:demo_logic/controller/splash_controller.dart';
+import 'package:demo_logic/Auth/controller/auth_controller.dart';
+import 'package:demo_logic/Auth/controller/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +16,6 @@ final AuthController _authController = Get.put(AuthController());
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    _authController.isLogin();
     _controller.initSpashController();
     super.initState();
   }
@@ -24,12 +23,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Center(
-            child: Text("Splash_Screen"),
-          )
-        ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [Text("Splash_Screen")],
+          ),
+        ),
       ),
     );
   }

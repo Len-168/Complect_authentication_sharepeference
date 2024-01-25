@@ -1,4 +1,4 @@
-import 'package:demo_logic/controller/auth_controller.dart';
+import 'package:demo_logic/Auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
